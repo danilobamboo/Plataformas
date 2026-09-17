@@ -9,6 +9,9 @@ public class RigidbodyMovement : MonoBehaviour
 
     public Rigidbody PlayerBody;
     public Transform PlayerCamera;
+    public Transform FeetTransform;
+    public LayerMask FloorMask;
+
 
     public float Sensitivity;
     private float xRot;
@@ -32,7 +35,10 @@ public class RigidbodyMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PlayerBody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+            if (Physics.CheckSphere(FeetTransform.position, 0.1f, FloorMask))
+            {
+                PlayerBody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+            }
         } 
 
     }
