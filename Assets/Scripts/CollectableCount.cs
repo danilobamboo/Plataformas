@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class CollectableCount : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    TMPro.TMP_Text text;
+    int count;
+
+    void Awake()
     {
-        
+        text = GetComponent<TMPro.TMP_Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start() => UpdateCount();
+
+    private void OnEnable() => Collectable.OnCollected += OnCollectableCollected;
+    private void OnDisable() => Collectable.OnCollected -= OnCollectableCollected;
+
+    void OnCollectableCollected()
     {
-        
+        count++;
+        UpdateCount(); 
+    }
+
+    void UpdateCount()
+    {
+        text.text = $"{count}/{Collectable.total}";
     }
 }
