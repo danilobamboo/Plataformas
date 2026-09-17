@@ -7,6 +7,7 @@ public class Collectable : MonoBehaviour
     public static int total;
 
     void Awake() => total++;
+
     void Update()
     {
         transform.localRotation = Quaternion.Euler(90f, Time.time * 100f, 0);
