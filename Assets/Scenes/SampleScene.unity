@@ -395,8 +395,8 @@ GameObject:
   - component: {fileID: 480314188}
   - component: {fileID: 480314187}
   - component: {fileID: 480314186}
-  - component: {fileID: 480314191}
   - component: {fileID: 480314192}
+  - component: {fileID: 480314193}
   m_Layer: 0
   m_Name: Rigidbody
   m_TagString: Untagged
@@ -501,27 +501,6 @@ Transform:
   - {fileID: 1577632863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &480314191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480314185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ccb0c95d5595284997e9fcb5120f151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExampleClass
-  speed: 6
-  jumpSpeed: 8
-  PlayerBody: {fileID: 480314192}
-  PlayerCamera: {fileID: 330585546}
-  FeetTransform: {fileID: 1577632863}
-  FloorMask:
-    serializedVersion: 2
-    m_Bits: 64
-  Sensitivity: 1
 --- !u!54 &480314192
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -549,6 +528,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &480314193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480314185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e5ac89c7a619341a5aee08a2c029a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RigidbodyMovement
+  speed: 6
+  jumpSpeed: 8
+  PlayerBody: {fileID: 480314192}
+  PlayerCamera: {fileID: 330585546}
+  FeetTransform: {fileID: 1577632863}
+  FloorMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Sensitivity: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
