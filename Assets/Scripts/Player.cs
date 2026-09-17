@@ -10,7 +10,7 @@ public class RigidbodyMovement : MonoBehaviour
     public Rigidbody PlayerBody;
     public Transform PlayerCamera;
 
-    private float Sensitivity;
+    public float Sensitivity;
     private float xRot;
 
     private Vector3 PlayerMovementInput;
