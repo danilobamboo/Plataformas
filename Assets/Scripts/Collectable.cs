@@ -4,9 +4,6 @@ using System;
 public class Collectable : MonoBehaviour
 {
     public static event Action OnCollected;
-    public static int total;
-
-    void Awake() => total++;
 
     void Update()
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 public class CollectableCount : MonoBehaviour
 {
     TMPro.TMP_Text text;
+    public int totalCollectables;
     int count;
 
     void Awake()
@@ -23,6 +24,6 @@ public class CollectableCount : MonoBehaviour
 
     void UpdateCount()
     {
-        text.text = $"{count}/{Collectable.total}";
+        text.text = $"{count}/{totalCollectables}";
     }
 }
