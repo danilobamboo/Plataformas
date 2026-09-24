@@ -31,7 +31,7 @@ public class DashMovement : MonoBehaviour
         bool grounded = Physics.CheckSphere(FeetTransform.position, 0.1f, FloorMask);
         if (grounded && !wasGroundedLastFrame)
         {
-            airDashesUsed = 0; // Reinicia las cargas de dash al tocar el piso
+            airDashesUsed = 0;
         }
         wasGroundedLastFrame = grounded;
 
@@ -73,7 +73,7 @@ public class DashMovement : MonoBehaviour
     {
         Vector3 inputDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
 
-        // Si el jugador no está moviéndose, dashea hacia donde mira (forward local)
+
         dashDirection = inputDir.sqrMagnitude > 0.01f
             ? transform.TransformDirection(inputDir).normalized
             : transform.forward;
@@ -89,8 +89,7 @@ public class DashMovement : MonoBehaviour
 
         PlayerBody.useGravity = UseGravityDuringDash;
 
-        // Desactiva el script de movimiento normal para que no compita
-        // por escribir linearVelocity mientras dura el dash.
+
         if (MovementScript != null)
         {
             MovementScript.enabled = false;
